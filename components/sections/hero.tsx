@@ -144,10 +144,7 @@ export default function Hero() {
               </div>
 
               {/* floating chips */}
-              <div className="animate-float absolute -top-6 left-0 hidden items-center gap-2 rounded-xl border border-white/[0.1] bg-[#0c0d10]/90 px-3.5 py-2.5 font-mono text-[11px] text-fog shadow-[0_16px_40px_-12px_rgba(0,0,0,.7)] backdrop-blur-md lg:flex">
-                <span className="h-1.5 w-1.5 rounded-full bg-acid" aria-hidden="true" />
-                next.js · react · TS
-              </div>
+              
               <div className="animate-float-late absolute -bottom-4 right-6 hidden items-center gap-2 rounded-xl border border-white/[0.1] bg-[#0c0d10]/90 px-3.5 py-2.5 font-mono text-[11px] text-fog shadow-[0_16px_40px_-12px_rgba(0,0,0,.7)] backdrop-blur-md md:flex">
                 <span className="text-acid" aria-hidden="true">●</span>
                 product concept · sample data
