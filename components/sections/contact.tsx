@@ -46,13 +46,16 @@ export default function Contact() {
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
 
-    const subject = encodeURIComponent(`New project — ${form.name}${form.company ? ` (${form.company})` : ""}`);
-    const body = encodeURIComponent(
+    const message = encodeURIComponent(
       `Hi NONAME,\n\nI'd like to talk about a project.\n\n` +
-        `Name: ${form.name}\nEmail: ${form.email}\nCompany: ${form.company || "—"}\n` +
-        `What I want to build: ${form.kind || "—"}\n\n${form.message}\n\n— ${form.name}`
+        `Name: ${form.name}\n` +
+        `Email: ${form.email}\n` +
+        `Company: ${form.company || "—"}\n` +
+        `What I want to build: ${form.kind || "—"}\n\n` +
+        `${form.message}\n\n` +
+        `— ${form.name}`
     );
-    window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
+    window.location.href = `https://wa.me/917815979515?text=${message}`;
     setSent(true);
   };
 
@@ -145,14 +148,13 @@ export default function Contact() {
                 <div className="flex flex-col items-start gap-4 py-8" role="status">
                   <CheckCircle2 size={44} strokeWidth={1.4} className="text-acid" />
                   <h3 className="font-display text-2xl font-semibold tracking-tight text-bone">
-                    Your mail app should be opening…
+                    Opening WhatsApp…
                   </h3>
                   <p className="max-w-md text-[15px] leading-relaxed text-dim">
-                    If nothing happened, write to us directly at{" "}
-                    <a href={`mailto:${site.email}`} className="link-line text-acid">
-                      {site.email}
-                    </a>{" "}
-                    — we read everything ourselves.
+                    If nothing happened, contact us directly on WhatsApp at{" "}
+                    <a href="https://wa.me/917815979515" className="link-line text-acid">
+                      +91 78159 79515
+                    </a>
                   </p>
                   <button
                     type="button"
@@ -248,7 +250,7 @@ export default function Contact() {
 
                   <div className="mt-7 flex flex-wrap items-center justify-between gap-4">
                     <p className="max-w-[210px] font-mono text-[10.5px] leading-relaxed tracking-wide text-faint">
-                      submitting opens your mail app — nothing is stored on this site.
+                      submitting opens WhatsApp with pre-filled message
                     </p>
                     <Magnetic strength={0.14}>
                       <button type="submit" className="btn btn-acid group !px-8 !py-3.5">

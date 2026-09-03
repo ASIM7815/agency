@@ -1,4 +1,4 @@
-import { ArrowRight, ArrowUpRight, Check, GitBranch } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check } from "lucide-react";
 import { LineReveal, Reveal } from "@/components/ui/anim";
 import { Magnetic } from "@/components/ui/motion-bits";
 import { CodeWindow, ScreenMock, KV } from "@/components/ui/code-visuals";
@@ -37,29 +37,10 @@ export default function Hero() {
       </div>
 
       <div className="container-x relative">
-        {/* status row */}
-        <Reveal y={14} className="mb-8 flex flex-wrap items-center gap-x-6 gap-y-3 md:mb-12">
-          <p className="flex items-center gap-2.5 font-mono text-[12px] tracking-[0.08em] text-faint">
-            <span className="status-dot" aria-hidden="true" />
-            independent software studio
-          </p>
-          <p className="hidden items-center gap-2 font-mono text-[12px] tracking-[0.08em] text-faint md:flex">
-            <GitBranch size={12} aria-hidden="true" />
-            <span className="text-dim">main</span> · open to new engagements
-          </p>
-          <p className="ml-auto flex items-center gap-2 font-mono text-[12px] tracking-[0.08em]">
-            <a href={`mailto:mohammadasimsaad@gmail.com`} className="chip chip-acid !px-3.5 !py-1 !text-[11px]">
-              mohammadasimsaad@gmail.com
-            </a>
-          </p>
-        </Reveal>
-
         <div className="grid items-start gap-14 lg:grid-cols-[1.06fr_0.94fr] lg:gap-10 xl:gap-16">
           {/* copy */}
           <div>
-            <Reveal delay={0.05} y={14}>
-              <p className="label-mono mb-6">[ software — digital products ]</p>
-            </Reveal>
+            
 
             <h1 className="display-xl">
               <LineReveal text="We build digital" className="block text-bone" />
