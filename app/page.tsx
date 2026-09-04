@@ -22,11 +22,11 @@ export default function Home() {
         <Marquee />
         <Services />
         <Products />
-        <Statement />
         <About />
         <Process />
         <Stack />
         <Why />
+        <Statement />
         <Contact />
       </main>
       <Footer />
