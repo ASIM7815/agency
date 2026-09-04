@@ -108,9 +108,6 @@ export default function Hero() {
                 <span className="pointer-events-none absolute -top-3 right-6 hidden rounded-lg border border-white/[0.12] bg-[#0c0d10]/95 px-2.5 py-1.5 font-mono text-[10px] tracking-wide text-fog shadow-deep xl:block">
                   concept · live footage
                 </span>
-                <span className="pointer-events-none absolute bottom-3 left-3 rounded-md border border-white/[0.08] bg-[#0c0d10]/70 px-2 py-1 font-mono text-[10px] tracking-[0.12em] text-faint backdrop-blur-sm sm:left-4">
-                  footage — SYG_Anime · Pixabay
-                </span>
               </div>
             </div>
           </Reveal>
