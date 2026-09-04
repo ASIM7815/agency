@@ -59,8 +59,8 @@ export default function Hero() {
                     <ArrowUpRight size={17} strokeWidth={2.4} className="btn-arrow" />
                   </a>
                 </Magnetic>
-                <a href="#work" className="btn btn-ghost group">
-                  Explore Our Work
+                <a href="#solutions" className="btn btn-ghost group">
+                  Explore Solutions
                   <ArrowRight size={16} className="btn-arrow" />
                 </a>
               </div>
