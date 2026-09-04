@@ -13,9 +13,92 @@ const SCREEN_BY_INDEX: ShowcaseScreen[] = [
   "wallet", "city", "console", "loom", "watch", "kiosk",
 ];
 
+/**
+ * Ambient footage per product concept (Pexels — free to use license).
+ * Plays inside the card's screen mock instead of the static chart/log UI.
+ */
+const VIDEO_BY_ID: Record<string, { src: string; poster: string; label: string }> = {
+  crm: {
+    src: "https://videos.pexels.com/video-files/3246669/3246669-uhd_2560_1440_25fps.mp4",
+    poster: "https://images.pexels.com/videos/3246669/free-video-3246669.jpg?auto=compress&cs=tinysrgb&w=1200",
+    label: "Sales team reviewing customer pipelines together",
+  },
+  erp: {
+    src: "https://videos.pexels.com/video-files/4477603/4477603-hd_1920_1080_30fps.mp4",
+    poster:
+      "https://images.pexels.com/videos/4477603/drone-footage-forklift-industrial-industrial-building-4477603.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    label: "Warehouse operations and inventory movement",
+  },
+  analytics: {
+    src: "https://videos.pexels.com/video-files/38870359/16524209_1080_1920_25fps.mp4",
+    poster:
+      "https://images.pexels.com/videos/38870359/analysis-analytics-bar-bar-chart-38870359.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    label: "Live business metrics on a analytics dashboard",
+  },
+  "ai-platform": {
+    src: "https://videos.pexels.com/video-files/8084494/8084494-uhd_2560_1440_25fps.mp4",
+    poster: "https://images.pexels.com/videos/8084494/pexels-photo-8084494.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    label: "Close-up of an AI assistant robot",
+  },
+  edtech: {
+    src: "https://videos.pexels.com/video-files/5881538/5881538-uhd_2732_1440_25fps.mp4",
+    poster:
+      "https://images.pexels.com/videos/5881538/education-girl-kid-online-learning-5881538.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    label: "Student taking an online course on a laptop",
+  },
+  health: {
+    src: "https://videos.pexels.com/video-files/6010957/6010957-uhd_2560_1440_25fps.mp4",
+    poster: "https://images.pexels.com/videos/6010957/pexels-photo-6010957.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    label: "Clinician reviewing patient records on a tablet",
+  },
+  commerce: {
+    src: "https://videos.pexels.com/video-files/5981981/5981981-uhd_2732_1440_25fps.mp4",
+    poster: "https://images.pexels.com/videos/5981981/ecommerce-5981981.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    label: "Customer checking out on an online store",
+  },
+  booking: {
+    src: "https://videos.pexels.com/video-files/7820472/7820472-hd_1920_1080_25fps.mp4",
+    poster:
+      "https://images.pexels.com/videos/7820472/adult-airplane-airport-apple-7820472.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    label: "Guest checking in at a reception desk",
+  },
+  automation: {
+    src: "https://videos.pexels.com/video-files/6964235/6964235-hd_1920_1080_25fps.mp4",
+    poster:
+      "https://images.pexels.com/videos/6964235/adult-antivirus-attack-binary-6964235.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    label: "Engineer building automation scripts across screens",
+  },
+  portal: {
+    src: "https://videos.pexels.com/video-files/8865706/8865706-hd_1920_1080_25fps.mp4",
+    poster:
+      "https://images.pexels.com/videos/8865706/call-center-office-talk-work-8865706.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    label: "Support team helping customers from a service desk",
+  },
+  saas: {
+    src: "https://videos.pexels.com/video-files/3252149/3252149-uhd_2560_1440_25fps.mp4",
+    poster: "https://images.pexels.com/videos/3252149/free-video-3252149.jpg?auto=compress&cs=tinysrgb&w=1200",
+    label: "Product team collaborating on a SaaS roadmap",
+  },
+  enterprise: {
+    src: "https://videos.pexels.com/video-files/5028622/5028622-uhd_2560_1440_25fps.mp4",
+    poster: "https://images.pexels.com/videos/5028622/pexels-photo-5028622.jpeg?auto=compress&cs=tinysrgb&w=1200",
+    label: "Server racks powering enterprise systems",
+  },
+};
+
 function ProductCard({ s, i }: { s: Solution; i: number }) {
   const Icon = s.icon;
-  const screen = getScreen(SCREEN_BY_INDEX[i] ?? "console");
+  const base = getScreen(SCREEN_BY_INDEX[i] ?? "console");
+  const clip = VIDEO_BY_ID[s.id];
+  const screen = clip
+    ? {
+        ...base,
+        video: clip.src,
+        videoPoster: clip.poster,
+        videoLabel: clip.label,
+        videoAspect: "aspect-[16/10]",
+      }
+    : base;
   return (
     <article className="group relative w-[320px] shrink-0 snap-start sm:w-[400px]">
       <div className="card-line card-hover flex h-full flex-col overflow-hidden !rounded-[1.2rem] p-4">
