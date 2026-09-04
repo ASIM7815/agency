@@ -43,9 +43,9 @@ public/         icon.svg
 
 - **No pricing anywhere**, no invented clients/stats/testimonials. Showcase
   work is clearly labelled as studio **concept projects** with sample data.
-- Videos stream from Pexels (CC0/Pexels licence, credited on-page), are lazy
-  loaded near the viewport, use poster frames, and are disabled under
-  `prefers-reduced-motion`.
+- Videos stream from Pexels and Pixabay (CC0-style licences, credited
+  on-page), are lazy loaded near the viewport, use poster frames, and are
+  disabled under `prefers-reduced-motion`.
 - The contact form validates client-side and composes a `mailto:` brief —
   no backend, nothing stored.
 - SEO: metadata + OpenGraph/Twitter, JSON-LD organization schema,
