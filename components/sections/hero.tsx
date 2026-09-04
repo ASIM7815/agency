@@ -7,7 +7,7 @@ import { getScreen } from "@/lib/data";
 const heroScreen = getScreen("board");
 
 const HERO_VIDEO = {
-  src: "https://pixabay.com/videos/download/video-145864_medium.mp4",
+  src: "/hero-video.mp4",
   label: "Cyberpunk hacker at work — ambient product footage",
   credit: "footage — SYG_Anime · Pixabay",
 };
@@ -104,13 +104,13 @@ export default function Hero() {
               />
 
               <div className="relative shadow-deep">
-              <ScreenMock
-           {...heroScreen}
-           className="!rounded-2xl"
-         video={HERO_VIDEO.src}
-       videoLabel={HERO_VIDEO.label}
-       videoAspect="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3]"
-                 />
+                <ScreenMock
+                  {...heroScreen}
+                  className="!rounded-2xl"
+                  video={HERO_VIDEO.src}
+                  videoLabel={HERO_VIDEO.label}
+                  videoAspect="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3]"
+                />
                 <span className="pointer-events-none absolute -top-3 right-6 hidden rounded-lg border border-white/[0.12] bg-[#0c0d10]/95 px-2.5 py-1.5 font-mono text-[10px] tracking-wide text-fog shadow-deep xl:block">
                   concept · live footage
                 </span>
