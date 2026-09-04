@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { LazyVideo } from "@/components/ui/lazy-video";
 
 const ACCENTS = {
   acid: { bar: "#c8ff3d", text: "#c8ff3d", chipBg: "rgba(200,255,61,.12)", line: "rgba(200,255,61,.5)" },
@@ -71,6 +72,8 @@ export function ScreenMock({
   bars,
   className = "",
   active,
+  video,
+  videoLabel,
 }: {
   title: string;
   meta: string;
@@ -79,6 +82,10 @@ export function ScreenMock({
   bars?: number[];
   className?: string;
   active?: boolean;
+  /** optional video src — when set, plays inside the window body instead of the mock UI */
+  video?: string;
+  /** accessible label for the video */
+  videoLabel?: string;
 }) {
   const a = ACCENTS[accent];
 
@@ -97,6 +104,15 @@ export function ScreenMock({
       </div>
 
       {/* body */}
+      {video ? (
+        <div className="relative min-h-[220px] flex-1 overflow-hidden bg-black sm:min-h-[260px]">
+          <LazyVideo
+            src={video}
+            label={videoLabel ?? title}
+            className="absolute inset-0 h-full w-full"
+          />
+        </div>
+      ) : (
       <div className="flex min-h-0 flex-1 gap-3 p-3">
         {/* sidebar */}
         <div className="hidden w-16 shrink-0 flex-col gap-2 sm:flex">
@@ -172,6 +188,7 @@ export function ScreenMock({
           )}
         </div>
       </div>
+      )}
     </div>
   );
 }
