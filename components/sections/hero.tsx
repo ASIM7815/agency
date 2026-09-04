@@ -6,8 +6,14 @@ import { getScreen } from "@/lib/data";
 
 const heroScreen = getScreen("board");
 
+/**
+ * Pixabay clip #265638 — "Anime scene cyberpunk hacker at work" by SYG_Anime.
+ * Must be the direct cdn.pixabay.com asset: the pixabay.com/videos/download/…
+ * endpoint serves an HTML captcha page (not video/mp4), so <video> can't play it.
+ */
 const HERO_VIDEO = {
-  src: "https://pixabay.com/videos/download/video-145864_medium.mp4",
+  src: "https://cdn.pixabay.com/video/2025/03/18/265638_medium.mp4",
+  poster: "https://cdn.pixabay.com/video/2025/03/18/265638_large.jpg",
   label: "Cyberpunk hacker at work — ambient product footage",
   credit: "footage — SYG_Anime · Pixabay",
 };
@@ -104,13 +110,14 @@ export default function Hero() {
               />
 
               <div className="relative shadow-deep">
-              <ScreenMock
-           {...heroScreen}
-           className="!rounded-2xl"
-         video={HERO_VIDEO.src}
-       videoLabel={HERO_VIDEO.label}
-       videoAspect="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3]"
-                 />
+                <ScreenMock
+                  {...heroScreen}
+                  className="!rounded-2xl"
+                  video={HERO_VIDEO.src}
+                  videoPoster={HERO_VIDEO.poster}
+                  videoLabel={HERO_VIDEO.label}
+                  videoAspect="aspect-[4/3] sm:aspect-[16/9] lg:aspect-[4/3]"
+                />
                 <span className="pointer-events-none absolute -top-3 right-6 hidden rounded-lg border border-white/[0.12] bg-[#0c0d10]/95 px-2.5 py-1.5 font-mono text-[10px] tracking-wide text-fog shadow-deep xl:block">
                   concept · live footage
                 </span>
