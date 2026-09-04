@@ -16,6 +16,10 @@ const terminalLines = [
 
 const heroScreen = getScreen("board");
 
+const HERO_VIDEO = {
+  src: "https://media.istockphoto.com/id/687157064/video/computer-screen-with-hacking-warning-message-cybercrime-concept-computer-system-under-attack.mp4?s=mp4-640x640-is&k=20&c=RtSZTnakRO61mb6wUh05ELhgzfKNfIVhbmfDnmh0k08=",
+};
+
 export default function Hero() {
   return (
     <section id="home" className="relative overflow-hidden pb-10 pt-32 sm:pt-36 md:pb-16 lg:pt-44">
@@ -110,7 +114,12 @@ export default function Hero() {
 
               <div className="relative grid gap-4 sm:grid-cols-[1.2fr_1fr]">
                 <div className="relative shadow-deep">
-                  <ScreenMock {...heroScreen} className="!rounded-2xl" />
+                  <ScreenMock
+                    {...heroScreen}
+                    className="!rounded-2xl"
+                    video={HERO_VIDEO.src}
+                    videoLabel="Growth Board — product demo"
+                  />
                   <span className="pointer-events-none absolute -top-3 -right-2 hidden rounded-lg border border-white/[0.12] bg-[#0c0d10]/95 px-2.5 py-1.5 font-mono text-[10px] tracking-wide text-fog shadow-deep xl:block">
                     concept · analytics
                   </span>
