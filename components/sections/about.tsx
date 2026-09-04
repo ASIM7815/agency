@@ -5,10 +5,9 @@ import { LazyVideo } from "@/components/ui/lazy-video";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 const STUDIO_VIDEO = {
-  src: "https://videos.pexels.com/video-files/5495845/5495845-hd_1920_1080_30fps.mp4",
-  poster:
-    "https://images.pexels.com/videos/5495845/airpods-black-black-guy-code-5495845.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  credit: "footage — Pavel Danilyuk · Pexels",
+  src: "https://pixabay.com/videos/download/x-19627_medium.mp4",
+  poster: "",
+  credit: "",
 };
 
 const disciplines = [
@@ -136,7 +135,7 @@ export default function About() {
                   </span>
                   <span className="flex items-center gap-2 font-mono text-[10px] tracking-[0.1em] text-faint">
                     <span className="h-1.5 w-1.5 rounded-full bg-ember" aria-hidden="true" />
-                    REC · {STUDIO_VIDEO.credit}
+                    REC
                   </span>
                 </figcaption>
               </figure>
