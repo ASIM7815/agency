@@ -23,26 +23,30 @@ export function CodeWindow({
   children,
   className = "",
   footer,
+  hideHeader = false,
 }: {
   title: string;
   children: ReactNode;
   className?: string;
   footer?: ReactNode;
+  hideHeader?: boolean;
 }) {
   return (
     <div className={`code-window ${className}`}>
-      <div className="flex items-center gap-3 border-b border-white/[0.06] px-4 py-3">
-        <div className="code-dots" aria-hidden="true">
-          <span />
-          <span />
-          <span />
+      {!hideHeader && (
+        <div className="flex items-center gap-3 border-b border-white/[0.06] px-4 py-3">
+          <div className="code-dots" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </div>
+          <div className="ml-1 flex min-w-0 items-center gap-2 text-[11px] text-dim">
+            <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-acid/80" aria-hidden="true" />
+            <span className="truncate font-mono tracking-wide">{title}</span>
+          </div>
+          {footer}
         </div>
-        <div className="ml-1 flex min-w-0 items-center gap-2 text-[11px] text-dim">
-          <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-acid/80" aria-hidden="true" />
-          <span className="truncate font-mono tracking-wide">{title}</span>
-        </div>
-        {footer}
-      </div>
+      )}
       <div className="code-scroll overflow-x-auto px-4 py-4 sm:px-5 sm:py-5">{children}</div>
     </div>
   );

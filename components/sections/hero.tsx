@@ -112,7 +112,7 @@ export default function Hero() {
                 aria-hidden="true"
               />
 
-              <div className="relative grid gap-4 sm:grid-cols-[1.2fr_1fr]">
+              <div className="relative grid gap-4">
                 <div className="relative shadow-deep">
                   <ScreenMock
                     {...heroScreen}
@@ -124,8 +124,8 @@ export default function Hero() {
                     concept · analytics
                   </span>
                 </div>
-                <div className="flex flex-col gap-4">
-                  <CodeWindow title="deploy — production" className="shadow-deep">
+                <div className="grid gap-4 sm:grid-cols-[1.15fr_0.85fr]">
+                  <CodeWindow title="deploy — production" hideHeader className="shadow-deep">
                     <div className="space-y-1">{terminalLines}</div>
                     <p className="mt-2 flex items-center gap-2 font-mono text-[13px]">
                       <span className="grid h-4 w-4 place-items-center rounded-full bg-acid/15 text-acid">
@@ -134,7 +134,7 @@ export default function Hero() {
                       <span className="text-acid">all systems operational</span>
                     </p>
                   </CodeWindow>
-                  <div className="card-line p-4">
+                  <div className="card-line h-full p-4">
                     <p className="font-mono text-[11px] tracking-[0.14em] text-faint">HOW WE ENGAGE</p>
                     <ul className="mt-3 space-y-2">
                       {[
