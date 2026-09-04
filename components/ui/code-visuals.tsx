@@ -77,6 +77,7 @@ export function ScreenMock({
   className = "",
   active,
   video,
+  videoPoster,
   videoLabel,
 }: {
   title: string;
@@ -88,6 +89,8 @@ export function ScreenMock({
   active?: boolean;
   /** optional video src — when set, plays inside the window body instead of the mock UI */
   video?: string;
+  /** poster frame shown before the video loads / under reduced motion */
+  videoPoster?: string;
   /** accessible label for the video */
   videoLabel?: string;
 }) {
@@ -109,9 +112,10 @@ export function ScreenMock({
 
       {/* body */}
       {video ? (
-        <div className="relative min-h-[220px] flex-1 overflow-hidden bg-black sm:min-h-[260px]">
+        <div className="relative aspect-[4/3] w-full shrink-0 grow-0 overflow-hidden bg-black sm:aspect-[16/9] lg:aspect-[21/9] lg:max-h-[64vh]">
           <LazyVideo
             src={video}
+            poster={videoPoster}
             label={videoLabel ?? title}
             className="absolute inset-0 h-full w-full"
           />
