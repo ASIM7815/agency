@@ -8,8 +8,8 @@ const heroScreen = getScreen("board");
 
 const HERO_VIDEO = {
   src: "/hero-video.mp4",
-  label: "Cyberpunk hacker at work — ambient product footage",
-  credit: "footage — SYG_Anime · Pixabay",
+  
+
 };
 
 export default function Hero() {
