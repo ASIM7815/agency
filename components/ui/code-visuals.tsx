@@ -79,6 +79,7 @@ export function ScreenMock({
   video,
   videoPoster,
   videoLabel,
+  videoAspect,
 }: {
   title: string;
   meta: string;
@@ -93,6 +94,8 @@ export function ScreenMock({
   videoPoster?: string;
   /** accessible label for the video */
   videoLabel?: string;
+  /** aspect ratio of the video body (defaults to a wide band) */
+  videoAspect?: string;
 }) {
   const a = ACCENTS[accent];
 
@@ -112,7 +115,11 @@ export function ScreenMock({
 
       {/* body */}
       {video ? (
-        <div className="relative aspect-[4/3] w-full shrink-0 grow-0 overflow-hidden bg-black sm:aspect-[16/9] lg:aspect-[21/9] lg:max-h-[64vh]">
+        <div
+          className={`relative w-full shrink-0 grow-0 overflow-hidden bg-black lg:max-h-[64vh] ${
+            videoAspect ?? "aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9]"
+          }`}
+        >
           <LazyVideo
             src={video}
             poster={videoPoster}
