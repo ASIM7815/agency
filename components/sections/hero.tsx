@@ -7,7 +7,7 @@ import { getScreen } from "@/lib/data";
 const heroScreen = getScreen("board");
 
 const HERO_VIDEO = {
-  src: "https://cdn.pixabay.com/video/2025/03/18/265638_large.mp4",
+  src: "https://pixabay.com/videos/download/video-145864_medium.mp4",
   poster: "https://cdn.pixabay.com/video/2025/03/18/265638_tiny.jpg",
   label: "Cyberpunk hacker at work — ambient product footage",
   credit: "footage — SYG_Anime · Pixabay",
